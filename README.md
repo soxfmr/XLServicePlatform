@@ -17,4 +17,14 @@ Empty Service Implementation to Replace Thunder XLServicePlatform
 - DllMain
 ```
 
-在导出上述空实现函数后，将 `XLServicePlatform.dll` 替换至 `<Install_Path>\Program\XLServicePlatform.dll` 目录下。
+# How it works
+
+1. 使用管理员方式打开命令提示符，卸载 `XLServicePlatform` 组件：
+
+```
+C:\> sc delete XLServicePlatform
+```
+
+2. 在导出上述空实现函数后，正常编译，并将新 `XLServicePlatform.dll` 替换至 `<Install_Path>\Program\XLServicePlatform.dll` 目录下。
+
+P.S：替换空实现 DLL 后，将无法安装 `XLServicePlatform`，但仍会有 UAC 安装提示。
